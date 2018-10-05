@@ -1,5 +1,5 @@
 function v_hat = NRF_model(X_fht,theta)
-% v_hat = NRF_model(X_fht,theta,args)
+% v_hat = NRF_model(X_fht,theta)
 % X_fht tensor of stimuli data
 % theta is a cell array of network parameters
 
