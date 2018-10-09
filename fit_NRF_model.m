@@ -59,9 +59,8 @@ for minibatch = 1:minibatch_number
     sub_refs{minibatch}{2} = y_t(startInd:endInd);
 end
 
-I = size(X_fht,1)*size(X_fht,2);
-
 % Initialization of network parameters
+I = size(X_fht,1)*size(X_fht,2);
 if ~exist('theta_init','var')
     rng('shuffle');
     C = 0.5;
