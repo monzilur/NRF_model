@@ -15,33 +15,27 @@ v_hat = NRF_model(test_fht,theta);
 
 %% plot the results
 % error function
-subplot(2,2,1)
+subplot(5,2,1)
 loglog(train_err)
 xlabel('iteration')
 ylabel('err')
 
-% two hidden units with maximum variance in their weight matrix
-[~,ind] = sort(var(theta{2},[],2),'descend');
-
-II=ind(1);
-subplot(2,2,2)
-weights = reshape(theta{2}(II,:),size(X_fht,1),size(X_fht,2));
-weights = weights * sign(theta{1}(II));
-maxabs = max(abs(weights(:)));
-imagesc(weights,[-maxabs maxabs]);
-axis xy;
-
-II=ind(2);
-subplot(2,2,3)
-weights = reshape(theta{2}(II,:),size(X_fht,1),size(X_fht,2));
-weights = weights * sign(theta{1}(II));
-maxabs = max(abs(weights(:)));
-imagesc(weights,[-maxabs maxabs]);
-axis xy;
-
 % data and prediction
-subplot(2,2,4)
+subplot(5,2,2)
 hold on
 plot(test_yt,'b');
 plot(v_hat,'r');
 legend('data','prediction');
+
+% two hidden units with maximum variance in their weight matrix
+[~,ind] = sort(var(theta{2},[],2),'descend');
+
+for ii=1:length(ind)
+  II=ind(ii);
+  subplot(5,5,5+ii)
+  weights = reshape(theta{2}(II,:),size(X_fht,1),size(X_fht,2));
+  weights = weights * sign(theta{1}(II));
+  maxabs = max(abs(weights(:)));
+  imagesc(weights,[-maxabs maxabs]);
+  axis xy;
+end
