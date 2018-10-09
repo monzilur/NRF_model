@@ -27,7 +27,7 @@ plot(test_yt,'b');
 plot(v_hat,'r');
 legend('data','prediction');
 
-% two hidden units with maximum variance in their weight matrix
+% hidden units sorted by variance of their weight matrix
 [~,ind] = sort(var(theta{2},[],2),'descend');
 
 for ii=1:length(ind)
