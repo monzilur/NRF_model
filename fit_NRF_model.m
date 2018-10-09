@@ -11,8 +11,8 @@ function [theta,train_err] = fit_NRF_model(X_fht,y_t,minibatch_number,...
 % num_pass: number of iteration through data, 20 is fine
 % theta_init: initial value of network parameters
 % 
-% most of parameters have got default values. So the the model will train
-% with only X_fht and y_t
+% Most of input options of the function have got default values.
+% So the the model will work if only X_fht and y_t are set.
 %
 % Author: Monzilur Rahman
 % Year: 2016
