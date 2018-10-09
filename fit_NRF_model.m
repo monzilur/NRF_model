@@ -42,7 +42,7 @@ if ~exist('num_pass')
 end
 
 if ~exist('minibatch_number','var')
-    minibatch_number = 20;
+    minibatch_number = 25;
 end
 
 % Make minibatches
