@@ -9,6 +9,7 @@ function [theta,train_err] = fit_NRF_model(X_fht,y_t,minibatch_number,...
 % regtype : 'abs' or 'sq'
 % lam: anything from 0 to 1
 % num_pass: number of iteration through data, 20 is fine
+% net_str: network structure e.g {20 1}
 % theta_init: initial value of network parameters
 % 
 % Most of input options of the function have got default values.

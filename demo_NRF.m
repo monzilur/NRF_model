@@ -8,8 +8,12 @@ test_yt = y_t(ceil(size(X_fht,3)*0.8):end);
 %% train a model based on test data
 % [theta,train_err] = fit_NRF_model(X_fht,y_t,minibatch_number,...
 %    regtype,lam,net_str,num_pass,theta_init)
+
 [theta,train_err]=fit_NRF_model(train_fht,train_yt,30,'abs',1e-5,{20 1},20);
 
+% for crossvalidation use v2
+% [theta,train_err,optim_lam,MSE]=fit_NRF_model_v2(train_fht,...
+%     train_yt,30,'abs');
 %% now use the model to make prediction
 v_hat = NRF_model(test_fht,theta);
 
