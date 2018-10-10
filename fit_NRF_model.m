@@ -37,6 +37,10 @@ if ~exist('lam','var')
     lam=1e-5;
 end
 
+if ~exist('crossvalidation_fold','var')
+    crossvalidation_fold = 1;
+end
+
 if ~exist('num_pass')
     num_pass = 20;
 end
@@ -46,11 +50,6 @@ if ~exist('minibatch_number','var')
 end
 
 % Make minibatches
-rng('shuffle');
-rand_ind = randperm(length(y_t));
-X_fht = X_fht(:,:,rand_ind);
-y_t = y_t(rand_ind);
-
 batch_size = floor(length(y_t)/minibatch_number);
 for minibatch = 1:minibatch_number
     startInd = (minibatch-1)*batch_size + 1;
@@ -61,6 +60,7 @@ end
 
 % Initialization of network parameters
 I = size(X_fht,1)*size(X_fht,2);
+
 if ~exist('theta_init','var')
     rng('shuffle');
     C = 0.5;
