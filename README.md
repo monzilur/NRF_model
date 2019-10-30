@@ -9,5 +9,6 @@
 # For DNet model codes please use: https://github.com/monzilur/DNet
 #
 # Author: Monzilur Rahman
+# https:www.monzilurrahman.com
 # monzilur.rahman@gmail.com
 # Year: 2016
