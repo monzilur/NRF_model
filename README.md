@@ -6,7 +6,7 @@
 # There's some test data and a demo script
 # Look at the demo for usage
 #
-# For DNet model codes please use: https://github.com/monzilur/DNet_model
+# For DNet model codes please use: https://github.com/monzilur/DNet
 #
 # Author: Monzilur Rahman
 # monzilur.rahman@gmail.com
